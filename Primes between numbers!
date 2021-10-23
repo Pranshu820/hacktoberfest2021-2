@@ -1,0 +1,36 @@
+// This program outputs all the prime numbers between positive intergers n and m, both exclusive!
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool isPrime(long int num){
+    if(num==1)
+      return false;
+    if(num==2)
+      return true;
+    if(num%2==0)
+      return false;
+    for(int i=3;i<=sqrt(num);i+=2){
+        if(num%i==0)
+          return false;
+    }
+    return true;
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+long int n,m;
+	
+	   cin>>m>>n;
+ 
+ for(long int i=m;i<=n;i++){
+	       if(isPrime(i))
+	          cout<<i<<"\n";
+	   }
+	   cout<<" \n";
+    return 0;
+}
+
